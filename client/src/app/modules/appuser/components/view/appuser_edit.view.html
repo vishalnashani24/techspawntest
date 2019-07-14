@@ -1,0 +1,53 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+        App User
+        
+    </h1>
+</section>
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-warning">
+        <form [formGroup]="usrFrm" #usrForm="ngForm" (ngSubmit)="save()">
+          <div class="box-body">
+            <div class="form-group">
+              <label>Firstname</label>
+              <input class="form-control" type="text" formControlName="firstname">
+              <div *ngIf="usrFrm.controls['firstname'].touched">
+                <p class="form_error" *ngIf="usrFrm.controls['firstname'].hasError('requiredTrim')">You must enter firstname.</p>
+              </div>
+            </div>
+          </div>
+          <div class="box-body">
+            <div class="form-group">
+              <label>Lastname</label>
+              <input class="form-control" type="text" formControlName="lastname">
+              <div *ngIf="usrFrm.controls['lastname'].touched">
+                <p class="form_error" *ngIf="usrFrm.controls['lastname'].hasError('requiredTrim')">You must enter lastname.</p>
+              </div>
+            </div>
+          </div>
+          <div class="box-body">
+            <div class="form-group">
+              <label>Email</label>
+              <input class="form-control" type="text" formControlName="email">
+              <div *ngIf="usrFrm.controls['email'].touched">
+                <p class="form_error" *ngIf="usrFrm.controls['email'].hasError('requiredTrim')">You must enter email.</p>
+                <p class="form_error" *ngIf="usrFrm.controls['email'].hasError('pattern')">Invalid email!</p>
+              </div>
+            </div>
+          </div>
+          <div class="box-footer">
+            <button type="button" (click)="back()" class="btn btn-default">Back</button>
+            <button  *ngIf="mode=='edit'"  [disabled]="usrFrm.invalid || httpCall" type="submit" class="btn btn-info pull-right">
+              <img *ngIf="httpCall" src="{{config.assetPath}}/img/loader/ajax-loader.gif" />
+              <span *ngIf="!httpCall">Save</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

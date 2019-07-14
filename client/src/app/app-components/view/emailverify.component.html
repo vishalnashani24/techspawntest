@@ -1,0 +1,22 @@
+<body class="hold-transition login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="../../index2.html"><b>Omni</b>Seq</a>
+    </div>
+    <section class="mrgTop_container1">
+      <div>
+        <div *ngIf="verifyStatus==1" class="alert alert-warning">
+          <strong>Please wait!</strong>
+        </div>
+
+        <div *ngIf="verifyStatus==3" class="alert alert-danger">
+          <strong>Your email is not verified! provided key is invalid!</strong>
+        </div>
+
+        <div *ngIf="verifyStatus==2" class="alert alert-success">
+          <strong>You have verified your email successfully!</strong>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>

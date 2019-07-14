@@ -1,0 +1,85 @@
+<section class="content-header">
+  <h1>
+        User
+        <small>Add</small>
+    </h1>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-warning">
+        <form [formGroup]="adduserform" #companionForm="ngForm" (ngSubmit)="save(file)">
+          <div class="box-body">
+            <div class="form-group">
+              <label>Firstname</label>
+              <input class="form-control" type="text" formControlName="firstname">
+              <div *ngIf="adduserform.controls['firstname'].touched">
+                <p class="form_error" *ngIf="adduserform.controls['firstname'].hasError('requiredTrim')">You must enter firstname.</p>
+              </div>
+            </div>
+          </div>
+          <div class="box-body">
+            <div class="form-group">
+              <label>Lastname</label>
+              <input class="form-control" type="text" formControlName="lastname">
+              <div *ngIf="adduserform.controls['lastname'].touched">
+                <p class="form_error" *ngIf="adduserform.controls['lastname'].hasError('requiredTrim')">You must enter lastname.</p>
+              </div>
+            </div>
+          </div>
+          <div class="box-body">
+            <div class="form-group">
+              <label>Email</label>
+              <input class="form-control" type="text" formControlName="email">
+              <div *ngIf="adduserform.controls['email'].touched">
+                <p class="form_error" *ngIf="adduserform.controls['email'].hasError('requiredTrim')">You must enter email.</p>
+                <p class="form_error" *ngIf="adduserform.controls['email'].hasError('pattern')">Invalid email!</p>
+              </div>
+            </div>
+          </div>
+          <div class="box-body">
+            <div class="form-group">
+              <label>Password</label>
+              <input class="form-control" type="password" formControlName="password">
+              <div *ngIf="adduserform.controls['password'].touched">
+                <p class="form_error" *ngIf="adduserform.controls['password'].hasError('requiredTrim')">You must enter password.</p>
+              </div>
+            </div>
+          </div>
+          <div class="box-body">
+            <div class="form-group">
+              <label>Salary</label>
+              <input class="form-control" type="text" formControlName="salary">
+              <div *ngIf="adduserform.controls['salary'].touched">
+                <p class="form_error" *ngIf="adduserform.controls['salary'].hasError('requiredTrim')">You must enter lastname.</p>
+              </div>
+            </div>
+          </div>
+         <!--  <div class="box-body">
+            <div class="form-group">
+              <label>Select Logo</label>
+              <div class="input-group add-on">
+                <input style="display:none;" (change)="updateFilename($event)" #file type="file" class="file">
+                <input class="form-control" formControlName="filename" name="filename" type="text">
+                <div class="input-group-btn">
+                  <button class="btn btn-success" type="button" (click)="file.click();"><i class="glyphicon glyphicon-cloud-upload"></i> Browse</button>
+                </div>
+              </div>
+              <div *ngIf="!logoSelected">
+                <p class="form_error">You must select a logo.</p>
+              </div>
+            </div>
+          </div> -->
+          <div class="box-footer">
+            <button type="button" [routerLink]="['/companion']" class="btn btn-default">Cancel</button>
+            <button [disabled]="adduserform.invalid || httpCall" type="submit" class="btn btn-info pull-right">
+              <img *ngIf="httpCall" src="{{config.assetPath}}/img/loader/ajax-loader.gif" />
+              <span *ngIf="!httpCall">Save</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+

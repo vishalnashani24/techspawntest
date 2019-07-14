@@ -1,0 +1,80 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        My Profile
+        <!--<small>Edit</small>-->
+    </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-warning">
+                <form [formGroup]="profileFrm" #profileForm="ngForm" (ngSubmit)="save()">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label>Firstname</label>
+                            <input class="form-control" type="text" formControlName="firstname">
+                            <div *ngIf="profileFrm.controls['firstname'].touched">
+                                <p class="form_error" *ngIf="profileFrm.controls['firstname'].hasError('requiredTrim')">You must enter firstname.</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="box-body">
+                        <div class="form-group">
+                            <label>Lastname</label>
+                            <input class="form-control" type="text" formControlName="lastname">
+                            <div *ngIf="profileFrm.controls['lastname'].touched">
+                                <p class="form_error" *ngIf="profileFrm.controls['lastname'].hasError('requiredTrim')">You must enter lastname.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input class="form-control" type="text" formControlName="email">
+                            <div *ngIf="profileFrm.controls['email'].touched">
+                                <p class="form_error" *ngIf="profileFrm.controls['email'].hasError('requiredTrim')">You must enter email.</p>
+                                <p class="form_error" *ngIf="profileFrm.controls['email'].hasError('pattern')">Invalid email!</p>
+                            </div>
+                        </div>
+                    </div> 
+                    <!-- <div class="box-body">
+  <div class="form-group row">
+    <label class="control-label col-md-12  requiredField"> Phone<span class="asteriskField">*</span> </label>
+    <div class="controls ">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-sx-12">
+        <select class="form-control mrbtn" formControlName="country_code">
+          <option class="form-control" *ngFor="let x of config.mob_country_code" [value]="x.key">{{x.text}}</option>
+        </select>
+      </div>
+      <div class="col-lg-10 col-md-10 col-sm-10 col-sx-12 nopadding">
+        <input formControlName="phone" class="input-md textinput textInput form-control" maxlength="30" name="phone" placeholder="Enter Phone" style="margin-bottom: 10px" type="text" />
+      </div>
+      <div class="clearfix"></div>
+      <div *ngIf="profileFrm.controls['phone'].touched">
+        <p class="form_error" *ngIf="profileFrm.controls['phone'].hasError('requiredTrim')">You must enter Phone No.</p>
+      </div>
+    </div>
+  </div>
+</div>
+ -->
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <button type="button" [routerLink]="['/dashboard']" class="btn btn-default">Cancel</button>
+                        <button [disabled]="profileFrm.invalid || httpCall" type="submit" class="btn btn-info pull-right">
+                            <img *ngIf="httpCall" src="{{config.assetPath}}/img/loader/ajax-loader.gif" /> 
+                            <span *ngIf="!httpCall">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+

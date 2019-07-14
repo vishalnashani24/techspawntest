@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+PRODID:-//Microsoft Corporation//Outlook 10.0 MIMEDIR//EN
+VERSION:2.0
+METHOD:REQUEST
+BEGIN:VTIMEZONE
+TZID:Eastern Time
+BEGIN:STANDARD
+DTSTART:20151101T020000
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=1SU;BYMONTH=11
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:Standard Time
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:20150301T020000
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=2SU;BYMONTH=3
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:Daylight Savings Time
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+ATTENDEE;CN="Matthew Klusas";ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:matthew.klusas@omniseq.com
+ORGANIZER;CN="Matthew Klusas":MAILTO:matthew.klusas@omniseq.com
+DTSTART;TZID="Eastern Time":20171113T070000
+DTEND;TZID="Eastern Time":20171113T073000
+LOCATION:https://omniseq.webex.com/omniseq
+TRANSP:OPAQUE
+SEQUENCE:1510548593
+UID:dc1d5c7a-b825-4f90-ab4e-795f88e636f3
+DTSTAMP:20171113T120000Z
+DESCRIPTION:\n\n\n\nJOIN WEBEX MEETING\nhttps://omniseq.webex.com/omniseq/j.php?MTID=m9f9bdf8840db4fc857afd933f34589d6\nMeeting number (access code): 852 494 377\n\n\n\nJOIN FROM A VIDEO SYSTEM OR APPLICATION\nDial sip:852494377@omniseq.webex.com\n\n\nJOIN BY PHONE\n1-240-454-0879 USA Toll\n\nGlobal call-in numbers:\nhttps://omniseq.webex.com/omniseq/globalcallin.php?serviceType=MC&ED=395438323&tollFree=0\n\n\n\nCan't join the meeting?\nhttps://help.webex.com/docs/DOC-5412\n\n\nIMPORTANT NOTICE: Please note that this WebEx service allows audio and other information sent during the session to be recorded, which may be discoverable in a legal matter. By joining this session, you automatically consent to such recordings. If you do not consent to being recorded, discuss your concerns with the host or do not join the session.\n
+X-ALT-DESC;FMTTYPE=text/html:	<FONT SIZE="1" FACE="ARIAL">&nbsp;<BR>&nbsp;<BR>&nbsp;<BR><FONT SIZE="4" FACE="ARIAL">		<a href="https://omniseq.webex.com/omniseq/j.php?MTID=m9f9bdf8840db4fc857afd933f34589d6"><FONT SIZE="3" COLOR="#00AFF9" FACE="Arial">Join WebEx meeting</FONT></a>			<table>				<tr>					<td>						<FONT SIZE="2" COLOR="#666666" FACE="arial">Meeting number (access code): 852 494 377</FONT>					</td>				</tr>			</table>								</FONT><br><FONT size="2" COLOR="#FF0000"></FONT><br><FONT SIZE="1" FACE="ARIAL">&nbsp;<BR>&nbsp;<BR></FONT><FONT SIZE="4" FACE="ARIAL"><FONT SIZE="3" COLOR="#666666" FACE="arial">Join from a video system or application</FONT><BR><FONT SIZE="2" COLOR="#666666" FACE="arial">Dial</FONT> <a href="sip:852494377@omniseq.webex.com"><FONT SIZE="2" COLOR="#00AFF9" FACE="arial">852494377@omniseq.webex.com</FONT></a>&nbsp; <BR></FONT>&nbsp; <BR>&nbsp; <BR><FONT SIZE="4" FACE="ARIAL"><FONT SIZE="3" COLOR="#666666" FACE="arial">Join by phone</FONT>&nbsp; <BR><FONT SIZE="2" COLOR="#666666" FACE="Segoe UI"><strong>1-240-454-0879</strong>&nbsp;USA Toll</FONT>&nbsp; <BR><a href="https://omniseq.webex.com/omniseq/globalcallin.php?serviceType=MC&ED=395438323&tollFree=0"><FONT SIZE="1" COLOR="#00AFF9" FACE="arial">Global call-in numbers</FONT></a>&nbsp; <BR></FONT><BR><BR>	&nbsp;<BR>	<a href="https://help.webex.com/docs/DOC-5412">	<FONT SIZE="1" COLOR="#00AFF9" FACE="Arial">Can't join the meeting?</FONT></a>	&nbsp;<BR>&nbsp;<BR><FONT COLOR="#A0A0A0" size="1" FACE="arial">IMPORTANT NOTICE: Please note that this WebEx service allows audio and other information sent during the session to be recorded, which may be discoverable in a legal matter. By joining this session, you automatically consent to such recordings. If you do not consent to being recorded, discuss your concerns with the host or do not join the session.</FONT></FONT>
+SUMMARY:OmniSeq App
+PRIORITY:5
+CLASS:PUBLIC
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR

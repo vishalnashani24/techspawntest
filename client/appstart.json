@@ -1,0 +1,11 @@
+{
+“applications”: [
+        {
+“name”: “angular”,
+“cwd”: “~/angular2”,
+“args”: “4200-d-p”,
+            false
+“scripts”: “/usr/bin/http-server”
+        }
+    ]
+}

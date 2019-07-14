@@ -1,0 +1,36 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Settings
+        <small>Update</small>
+    </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-warning">
+                <form [formGroup]="settingsFrm" #settingsForm="ngForm" (ngSubmit)="save()">
+                    <div class="box-body">
+                        <div class="form-group" *ngFor="let stng of settingsFrm['controls']; let i=index"  [formGroupName]="i">
+                            <label>{{settingsFrm['controls'][i]['controls']['data']['value']['name']}}: </label>
+                            <input class="form-control" type="text" formControlName="field">
+                            <div *ngIf="settingsFrm['controls'][i]['controls']['field'].touched">
+                                <p class="form_error" *ngIf="settingsFrm['controls'][i]['controls']['field'].hasError('requiredTrim')">Above field can not be blank!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <button [disabled]="settingsFrm.invalid || httpCall" type="submit" class="btn btn-info pull-right">
+                            <img *ngIf="httpCall" src="{{config.assetPath}}/img/loader/ajax-loader.gif" /> 
+                            <span *ngIf="!httpCall">Update</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

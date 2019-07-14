@@ -1,0 +1,45 @@
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel text-center info" style="background: #F6821F; color: #fff;">
+      <p>{{user.firstname}} {{user.lastname}}
+        <br>Welcome to Admin Portal</p>
+    </div>
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu" data-widget="tree">
+
+     
+
+       <li routerLinkActive="active">
+        <a routerLink="/appuser/list/c">
+           <i class="fa fa-users"></i>  
+          <span class="left-panel-txt">Ceo</span>
+        </a>
+      </li>
+
+       <li routerLinkActive="active">
+        <a routerLink="/appuser/list/m">
+           <i class="fa fa-users"></i>  
+          <span class="left-panel-txt">Manager</span>
+        </a>
+      </li>
+
+       <li routerLinkActive="active">
+        <a routerLink="/appuser/list/l">
+           <i class="fa fa-users"></i>  
+          <span class="left-panel-txt">Leads</span>
+        </a>
+      </li>
+
+       <li routerLinkActive="active">
+        <a routerLink="/appuser/list/d">
+           <i class="fa fa-users"></i>  
+          <span class="left-panel-txt">Developer</span>
+        </a>
+      </li>
+      
+    </ul>
+  </section>
+  <!-- /.sidebar -->
+</aside>

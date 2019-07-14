@@ -1,0 +1,8 @@
+.dashboardBox i img {
+  width: 60px;
+}
+
+.small-box>.inner {
+  padding: 10px;
+  min-height: 120px;
+}

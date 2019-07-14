@@ -1,0 +1,103 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+        Users
+        <!--<small>Control panel</small>-->
+    </h1>
+</section>
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box">
+        <div class="box-header">
+          <div class="row">
+            <div class="col-lg-12 mb-5">
+              <form class="form-inline" novalidate>
+                <div class="form-group">
+                  <label class="sr-only" for="exampleInputEmail3">Firstname</label>
+                  <input type="text" [(ngModel)]="params.firstname" name="firstname" class="form-control" placeholder="Firstname">
+                </div>
+                <div class="form-group">
+                  <label class="sr-only" for="exampleInputEmail3">Lastname</label>
+                  <input type="text" [(ngModel)]="params.lastname" name="lastname" class="form-control" placeholder="Lastname">
+                </div>
+                <div class="form-group">
+                  <label class="sr-only" for="exampleInputEmail3">Email</label>
+                  <input type="text" [(ngModel)]="params.email" name="email" class="form-control" placeholder="Email">
+                </div>
+                <!--<div class="form-group">
+                <label class="sr-only" for="exampleInputEmail3">Status</label>
+                <select class="form-control" [(ngModel)]="params.status" name="status">
+                  <option value="">All</option>
+                  <option value="0">New Users</option>
+                  <option value="1">Active Users</option>
+                  <option value="2">Inactive Users</option>
+                </select>
+              </div> -->
+                <button type="submit" (click)="getAll()" class="ml10 btn btn-primary">Search</button>
+                <button type="button
+                " (click)="resetSearch()" class="ml10 btn btn-default">Reset</button>
+                <button *ngIf="show" type="button" (click)="adduser()" class="ml10 btn btn-primary pull-right">Add User</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body table-responsive no-padding">
+          <table class="table table-hover">
+            <tbody>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <!--                 <th>Phone</th>
+                <th>Email Verified</th> -->
+                <!-- <th>Status</th> -->
+                <th>Created</th>
+                <th>Action</th>
+              </tr>
+              <tr *ngIf="loading">
+                <td colspan="7">
+                  <div class="cssload-loader">Loading</div>
+                </td>
+              </tr>
+              <tr *ngIf="(listData.length <= 0) && !loading">
+                <td colspan="7">
+                  <div class="alert alert-info alert-dismissable">
+                    <i class="fa fa-info-circle"></i> <strong>No user found!</strong>
+                  </div>
+                </td>
+              </tr>
+              <tr *ngFor="let ld of listData">
+                <td>{{ld.firstname}}</td>
+                <td>{{ld.lastname}}</td>
+                <td>{{ld.email}}</td>
+                <td>{{ld.createdAt | date:'short'}}</td>
+                <td>
+                 <a (click)="editview(ld._id,'view')" class="table-icon btn btn-social-icon btn-bitbucket"><i class="fa fa-eye fa-lg"></i></a>
+                  <a (click)="editview(ld._id,'edit')" class=" ml10 table-icon btn btn-social-icon btn-bitbucket"><i class="fa fa-pencil fa-lg"></i></a>
+                  <a href="javascript:void(0);" (click)="remove(ld._id);" class="ml10 table-icon btn btn-social-icon btn-bitbucket"><i class="fa fa-trash-o fa-lg"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="box-footer">
+          <div class="row">
+            <div class="col-sm-3">
+              <select class="form-control" #prPage (change)="changePageLimit(prPage.value)">
+                <option *ngFor="let pgarr of config.perPageArray" [value]="pgarr.val" [selected]="pgarr.val == params.limit">{{pgarr.text}}</option>
+              </select>
+            </div>
+            <div class="col-sm-9">
+              <pagination class="pull-right" [totalItems]="totalItems" [itemsPerPage]="params.limit" [(ngModel)]="params.page" (pageChanged)="pageChanged($event)" [maxSize]="5" [boundaryLinks]="true" [rotate]="false" previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;"></pagination>
+            </div>
+          </div>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+    </div>
+  </div>
+</section>

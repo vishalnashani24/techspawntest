@@ -1,0 +1,38 @@
+<p-confirmDialog header="Confirmation" icon="fa fa-question-circle"></p-confirmDialog>
+<header class="main-header">
+  <!-- Logo -->
+  <a class="logo">
+    <!-- mini logo for sidebar mini 50x50 pixels -->
+    <span class="logo-mini"><b>Ad</b>Track</span>
+    <!--  -->
+    <span class="logo-lg"><img  src="assets/img/admin-logo.png" alt="AdTrack" style="width: 165px; margin-top: -10px;" /></span>
+  </a>
+  <nav class="navbar navbar-static-top">
+    <!-- <a href="javascript:void(0)" class="sidebar-toggle" data-toggle="push-menu" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a> -->
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        
+        <li class="dropdown user user-menu" dropdown>
+          <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" dropdownToggle>
+            <span class="hidden-xs">{{user.firstname}} {{user.lastname}}</span>
+          </a>
+          <ul class="dropdown-menu" *dropdownMenu>
+            <li class="user-header">
+              <p>
+                <strong>{{user.firstname}} {{user.lastname}}</strong>
+                <small>Welcome to Admin Portal</small>
+              </p>
+            </li>
+         
+          
+          </ul>
+        </li>
+        <li class="dropdown notifications-menu" dropdown>
+          <a href="javascript:void(0)" (click)="logout();"><i class="fa fa-power-off"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
