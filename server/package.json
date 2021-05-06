@@ -48,7 +48,7 @@
     "shortid": "^2.2.6",
     "stripe": "^4.4.0",
     "swagger-express-mw": "^0.1.0",
-    "underscore": "^1.8.3",
+    "underscore": "^1.12.1",
     "util": "^0.10.3",
     "validator": "^4.9.0",
     "xml-writer": "^1.7.0"
